@@ -1,0 +1,451 @@
+:root {
+    --morado-oscuro: #4b2678;
+    --morado: #7451a8;
+    --morado-claro: #eee7f8;
+    --blanco: #ffffff;
+    --texto: #2d2438;
+    --sombra: 0 8px 25px rgba(75,38,120,0.15);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--blanco);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+
+/* PORTADA */
+
+.portada {
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #eee7f8
+    );
+
+}
+
+
+.portada h1 {
+
+    max-width:850px;
+
+    color:var(--morado-oscuro);
+
+    font-size:clamp(2rem,5vw,4rem);
+
+}
+
+
+.subtitulo {
+
+    max-width:750px;
+
+    font-size:1.1rem;
+
+}
+
+
+
+.ilustracion-portada {
+
+    width:min(500px,90%);
+
+}
+
+
+
+svg {
+
+    width:100%;
+
+}
+
+
+
+.circulo {
+
+    fill:#eee7f8;
+
+}
+
+
+
+.mesa {
+
+    fill:#7451a8;
+
+}
+
+
+
+.persona {
+
+    fill:#ffffff;
+    stroke:#4b2678;
+    stroke-width:6;
+
+}
+
+
+
+.libro {
+
+    fill:#ffffff;
+    stroke:#7451a8;
+    stroke-width:5;
+
+}
+
+
+
+.linea {
+
+    stroke:#7451a8;
+    stroke-width:5;
+
+}
+
+
+/* BOTÓN */
+
+
+.boton-explorar {
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:var(--morado);
+
+    color:white;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.boton-explorar:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* SECCIONES */
+
+
+.seccion {
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:60px 20px;
+
+}
+
+
+h2 {
+
+    color:var(--morado-oscuro);
+
+    font-size:2rem;
+
+}
+
+
+
+h3 {
+
+    color:var(--morado);
+
+}
+
+
+/* ACORDEON */
+
+
+.pregunta {
+
+    width:100%;
+
+    text-align:left;
+
+    padding:18px;
+
+    margin-top:12px;
+
+    background:var(--morado-claro);
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+}
+
+
+
+.respuesta {
+
+    display:none;
+
+    padding:20px;
+
+    background:white;
+
+    border-left:5px solid var(--morado);
+
+}
+
+
+
+.respuesta.activa {
+
+    display:block;
+
+}
+
+
+
+
+/* EJES */
+
+
+.grid-ejes {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.tarjeta-eje {
+
+    min-height:100px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:var(--sombra);
+
+    color:var(--morado-oscuro);
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.tarjeta-eje:hover {
+
+    transform:translateY(-5px);
+
+    background:var(--morado-claro);
+
+}
+
+
+
+
+.bloque-eje {
+
+    display:none;
+
+    animation:aparecer .4s ease;
+
+}
+
+
+
+.bloque-eje.activo {
+
+    display:block;
+
+}
+
+
+
+@keyframes aparecer {
+
+from {
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to {
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.imagen-eje {
+
+    font-size:4rem;
+
+}
+
+
+
+
+ul {
+
+    padding-left:25px;
+
+}
+
+
+
+
+.reto {
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#f5effd;
+
+    border-left:8px solid var(--morado-oscuro);
+
+    border-radius:15px;
+
+}
+
+
+
+.reflexiones {
+
+    background:var(--morado-claro);
+
+    border-radius:25px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:900px){
+
+
+.grid-ejes {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.grid-ejes {
+
+grid-template-columns:1fr;
+
+}
+
+
+.seccion {
+
+padding:35px 15px;
+
+}
+
+
+.portada {
+
+padding:25px 15px;
+
+}
+
+
+}
+
+
+/* ACCESIBILIDAD */
+
+button:focus {
+
+outline:4px solid #b79be5;
+
+outline-offset:3px;
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+* {
+
+animation:none!important;
+scroll-behavior:auto;
+
+}
+
+}
